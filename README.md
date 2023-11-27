@@ -1,6 +1,8 @@
 👋 Hi, I’m @MalikHaq
 
-Below are my Skills:
+:man_student: About me:
+
+:trophy: Below are my Skills:
 - R
 - Python
 - Power BI
