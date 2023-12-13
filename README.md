@@ -22,8 +22,8 @@ Beyond the world of data, I'm an avid learner, always seeking new challenges and
 Let's connect and explore the endless possibilities that data offers!
 
 Feel free to reach out:
-- LinkedIn: [Your LinkedIn Profile](link)
-- Email: your@email.com
+- LinkedIn: [ Malik Anwar ul Haq](https://www.linkedin.com/in/malik-anwar-ul-haq-a88949171/)
+- Email: justbelieveyourself0@gmail.com
 
 
 
