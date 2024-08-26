@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALIK HAQ | Data Enthusiast</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --dark-bg-color: #2c3e50;
+            --dark-text-color: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .hero h1 {
+            font-weight: 700;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            border: 5px solid white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .hero img:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .about-me p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .skill {
+            margin-bottom: 30px;
+        }
+
+        .skill h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+
+        .project {
+            margin-bottom: 40px;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project h5 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .project p {
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        .connect {
+            text-align: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 15px;
+            color: var(--primary-color);
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.2);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .dark-mode {
+            background-color: var(--dark-bg-color);
+            color: var(--dark-text-color);
+        }
+
+        .dark-mode .container {
+            background-color: #34495e;
+        }
+
+        .dark-mode .about-me p,
+        .dark-mode .project p {
+            color: var(--dark-text-color);
+        }
+
+        .dark-mode .skill-bar {
+            background-color: #4a6272;
+        }
+
+        .dark-mode .social-icons a {
+            color: var(--dark-text-color);
+        }
+
+        .dark-mode .btn {
+            background: linear-gradient(135deg, #2980b9, #27ae60);
+        }
+    </style>
+</head>
+<body>
+    <button id="mode-toggle"><i class="fas fa-moon"></i></button>
+    <div class="hero">
+        <img src="profile.jpg" alt="Malik Haq">
+        <h1>MALIK HAQ</h1>
+        <p>Data Enthusiast</p>
+    </div>
+    <div class="container">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>I'm a passionate data enthusiast with a knack for turning raw information into actionable insights. With a solid foundation in R, Python, Excel, Power BI, and Tableau, I thrive on leveraging these tools to extract meaningful conclusions from complex data.</p>
+            <p>I believe in the transformative potential of data and its ability to revolutionize industries, inform strategies, and spark innovation.</p>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill">
+                        <h4>R</h4>
+                        <div class="skill-bar">
+                            <span style="width: 90%;"></span>
+                        </div>
+                        <p>Proficient in data analysis and statistical modeling using R programming language.</p>
+                    </div>
+                    <div class="skill">
+                        <h4>R Shiny</h4>
+                        <div class="skill-bar">
+                            <span style="width: 90%;"></span>
+                        </div>
+                        <p>Proficient in creating interactive web applications using the R Shiny framework, for the development of dynamic and responsive data visualization.</p>
+                    </div>
+                    <div class="skill">
+                        <h4>Python</h4>
+                        <div class="skill-bar">
+                            <span style="width: 85%;"></span>
+                        </div>
+                        <p>Experienced in data manipulation, machine learning, and automation with Python.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill">
+                        <h4>Excel</h4>
+                        <div class="skill-bar">
+                            <span style="width: 95%;"></span>
+                        </div>
+                        <p>Advanced skills in data organization, analysis, and visualization using Excel.</p>
+                    </div>
+                    <div class="skill">
+                        <h4>Power BI</h4>
+                        <div class="skill-bar">
+                            <span style="width: 90%;"></span>
+                        </div>
+                        <p>Creating interactive and insightful dashboards for data representation.</p>
+                    </div>
+                    <div class="skill">
+                        <h4>Tableau</h4>
+                        <div class="skill-bar">
+                            <span style="width: 90%;"></span>
+                        </div>
+                        <p>Skilled in data visualization and dashboard creation with Tableau.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project">
+                        <img src="rproject.png" alt="Project 1">
+                        <h5>Project 1: Data Analysis with R</h5>
+                        <p>Explore the power of R in data analysis and visualization.</p>
+                        <a href="https://github.com/MalikHaq/EDA-in-R-and-Python" target="_blank" class="btn">View More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project">
+                        <img src="telcoproject.jpeg" alt="Project 2">
+                        <h5>Project 2: MODELLING OF WIDE AREA NETWORK</h5>
+                        <p>Create a wide-area networking architecture utilizing a Cisco packet tracer.</p>
+                        <a href="#" target="_blank" class="btn">View More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project">
+                        <img src="tableauproject.png" alt="Project 3">
+                        <h5>Project 3: Data Visualization with Tableau</h5>
+                        <p>Create interactive dashboards with Tableau.</p>
+                        <a href="https://github.com/MalikHaq/patientsAge_and_Conditions" target="_blank" class="btn">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="connect">
+            <h2>Let's Connect</h2>
+            <p class="lead mb-5">Explore the endless possibilities that data offers with me!</p>
+            <div class="social-icons d-flex justify-content-center mb-4">
+                <a href="https://www.linkedin.com/in/malik-anwar-ul-haq/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/MalikHaq" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/malik-anwar-ul-haq/" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+            <a href="mailto:justbelieveyourself0@gmail.com" class="btn">
+                <i class="fas fa-envelope mr-2"></i>
+                Get in Touch
+            </a>
+        </div>
+    </div>
+    <script>
+        // Toggle Dark Mode
+        const toggleBtn = document.getElementById('mode-toggle');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.innerHTML = document.body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar span');
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    bar.style.width = bar.getAttribute('style').split(':')[1];
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateSkillBars);
+        window.addEventListener('load', animateSkillBars);
+    </script>
+</body>
+</html>
